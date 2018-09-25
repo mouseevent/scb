@@ -35,7 +35,7 @@ public class TicketRepositoryTest {
 		try {
 			Date from = format.parse("2018-09-01");
 			Date to = format.parse("2018-09-01");
-			List<Ticket> tickets = repository.findByUser("ad1001");
+			List<Ticket> tickets = repository.findByUser("admin");
 			assertNotNull(tickets);
 			assertEquals(1, tickets.size());
 			Ticket ticket = tickets.get(0);

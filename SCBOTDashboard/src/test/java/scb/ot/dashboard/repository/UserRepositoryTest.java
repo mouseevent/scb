@@ -21,11 +21,11 @@ public class UserRepositoryTest {
 	private static Logger logger = Logger.getLogger(UserRepositoryTest.class);
 
 	@Test
-	@Sql("classpath:db/tables.ddl.sql")
-	@Sql("classpath:db/data_insert.sql")
+//	@Sql("classpath:db/tables.ddl.sql")
+//	@Sql("classpath:db/data_insert.sql")
 	public void testLogin() {
 		assertNotNull(repository);
-		User user = repository.findByUserIdAndPassword("jd1000", "jd1000");
+		User user = repository.findByUserIdAndPassword("leader", "leader");
 		assertNotNull(user);
 	}
 
@@ -33,7 +33,7 @@ public class UserRepositoryTest {
 	@Sql("classpath:db/tables.ddl.sql")
 	@Sql("classpath:db/data_insert.sql")
 	public void testRole() {
-		User user = repository.findByUserId("ad1001");
+		User user = repository.findByUserId("leader");
 		assertNotNull(user);
 		logger.info(user);
 		assertNotNull(user.getRole());
